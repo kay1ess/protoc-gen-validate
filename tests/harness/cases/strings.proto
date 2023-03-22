@@ -39,3 +39,8 @@ message StringValidHeader    { string val = 1 [(validate.rules).string = {well_k
 message StringUUIDIgnore     { string val = 1 [(validate.rules).string = {uuid: true, ignore_empty: true}]; }
 
 message StringUUIDIgnoreErrorMsg     { string val = 1 [(validate.rules).string = {uuid: true, error_msg: "custom error msg string uuid"}]; }
+message StringInOneOf {
+    oneof foo {
+      string bar = 1 [(validate.rules).string = {in: "a" in: "b"}];
+    }
+  }

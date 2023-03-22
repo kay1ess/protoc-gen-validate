@@ -269,13 +269,13 @@ func underscoreBetweenConsecutiveUppercase(name string) string {
 func appendOuterClassName(outerClassName string, file pgs.File) string {
 	conflict := false
 
-	for _, enum := range file.Enums() {
+	for _, enum := range file.AllEnums() {
 		if enum.Name().String() == outerClassName {
 			conflict = true
 		}
 	}
 
-	for _, message := range file.Messages() {
+	for _, message := range file.AllMessages() {
 		if message.Name().String() == outerClassName {
 			conflict = true
 		}
@@ -477,7 +477,7 @@ func (fns javaFuncs) tsLit(ts *timestamppb.Timestamp) string {
 }
 
 func (fns javaFuncs) oneofTypeName(f pgs.Field) pgsgo.TypeName {
-	return pgsgo.TypeName(fmt.Sprintf("%s", strings.ToUpper(f.Name().String())))
+	return pgsgo.TypeName(strings.ToUpper(f.Name().String()))
 }
 
 func (fns javaFuncs) isOfFileType(o interface{}) bool {

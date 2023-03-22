@@ -1,16 +1,23 @@
 module github.com/envoyproxy/protoc-gen-validate
 
-go 1.12
+go 1.17
 
 require (
 	github.com/iancoleman/strcase v0.2.0
-	github.com/lyft/protoc-gen-star v0.6.0
-	github.com/spf13/afero v1.6.0 // indirect
+	github.com/lyft/protoc-gen-star v0.6.1
 	golang.org/x/lint v0.0.0-20210508222113-6edffad5e616
-	golang.org/x/mod v0.5.0 // indirect
-	golang.org/x/net v0.0.0-20210813160813-60bc85c4be6d
-	golang.org/x/sys v0.0.0-20210816183151-1e6c022a8912 // indirect
-	golang.org/x/text v0.3.7 // indirect
-	golang.org/x/tools v0.1.5
-	google.golang.org/protobuf v1.27.1
+	golang.org/x/net v0.2.0
+	golang.org/x/tools v0.3.0
+	google.golang.org/protobuf v1.28.1
 )
+
+require (
+	github.com/golang/protobuf v1.5.2 // indirect
+	github.com/spf13/afero v1.9.2 // indirect
+	golang.org/x/mod v0.7.0 // indirect
+	golang.org/x/sys v0.2.0 // indirect
+	golang.org/x/text v0.4.0 // indirect
+	golang.org/x/xerrors v0.0.0-20220907171357-04be3eba64a2 // indirect
+)
+
+retract [v0.6.9, v0.6.12] // Published accidentally
