@@ -135,15 +135,8 @@ func (e {{ errname . }}) Error() string {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
 	}
 
-	key := ""
-	if e.key {
-		key = "key for "
-	}
-
 	return fmt.Sprintf(
-		"invalid %s{{ (msgTyp .) }}.%s: %s%s",
-		key,
-		e.field,
+		"%s%s",
 		e.reason,
 		cause)
 }
